@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vastra Vibe | Royal Traditional Elegance</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    background-color: #FFFDF5;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family:serif;
+    color: maroon;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: gold;
+    margin: 10px auto;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family:  serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: maroon;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: gold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: gold;
+}
+
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1599026780962-896803876935?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+.btn-gold {
+    display: inline-block;
+    padding: 15px 40px;
+    background: gold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-gold:hover {
+    background: maroon;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.3);
+}
+
+
+.about {
+    padding: 100px 0;
+    background: beige;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    border: 10px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+
+.collection {
+    padding: 100px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding-bottom: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.card-img {
+    overflow: hidden;
+    height: 400px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
+
+.price {
+    color: gold;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+
+.gallery {
+    padding: 80px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+.gallery-item{
+    position:relative;
+    overflow: hidden;
+    cursor:pointer;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(128, 0, 0, 0.8); /* maroon transparent */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: 0.4s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.contact {
+    padding: 100px 0;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    outline: none;
+}
+.btn-maroon {
+    padding: 15px;
+    background: maroon;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease; 
+}
+
+.btn-maroon:hover {
+    background: gold;
+}
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 20px;
+    text-align: center;
+}
+
+.socials {
+    margin: 20px 0;
+}
+
+.socials a {
+    color: beige;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.socials a:hover {
+    color: gold;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 30px;
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">Vastra<span>vibe</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Celebrate Tradition with Elegance</h1>
+            <p>Handcrafted ethnic wear that tells a story of heritage and royalty.</p>
+            <a href="#collection" class="btn-gold">EXPLORE COLLECTION</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" alt="Traditional Craftsmanship">
+                </div>
+                <div class="about-text">
+                    <h2>Our phylosophy</h2>
+                    <p>Vastra Vibe was born out of a passion for preserving the intricate arts of weaving and embroidery. From the looms of Banaras to the artisans of Andhra, we bring you timeless silhouettes designed for the modern royal.</p>
+                    <p>Every thread is a tribute to our culture, ensuring you stand out in every celebration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collection" class="collection">
+        <div class="container">
+            <h2 class="section-title">The Royal Collection</h2>
+            <div class="product-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80" alt="Saree">
+                    </div>
+                    <h3>Banarasi Silk Saree</h3>
+                    <p class="price">₹12,500</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://clothsvilla.com/cdn/shop/files/pink-designer-lehenga-choli-in-soft-georgette-with-heavy-sequin-work-net-dupatta_2_1024x1024.jpg?v=1744460742" alt="Lehenga">
+                    </div>
+                    <h3>Bridal Velvet Lehenga</h3>
+                    <p class="price">₹45,000</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://manishmalhotra.in/cdn/shop/files/MMN-SHW-52926-KR-PT_C-ENQ-1_4e089fb5-0547-434d-aba5-ec396c055041.png?v=1758544611" alt="Sherwani">
+                    </div>
+                    <h3>Royal Groom Sherwani</h3>
+                    <p class="price">₹32,000</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYRmJfamkEQTBcpXrMQnOAdwxs1WBZ7oXPwg&s" alt="Kurta">
+                    </div>
+                    <h3>Lucknowi Chikan Kurta</h3>
+                    <p class="price">₹5,500</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Anarkali">
+                    </div>
+                    <h3>Purple Benaras saree</h3>
+                    <p class="price">₹18,900</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://cdn.shopaccino.com/swadescreations/products/whatsapp-image-2025-01-06-at-95633-pm-1-6031323817401_l.jpeg?v=652" alt="Dupatta">
+                    </div>
+                    <h3>Phulkari Dupatta</h3>
+                    <p class="price">₹2,200</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">The Lookbook</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS6ZYcG3dbobHGNcnwFq3hPEa43UmwGP7XVDmJethrpaNNcIrAJwMjFS2j1kxiVxVeCSbvzCO95uDzXn1ReAn-1aKDAIg4UUg" alt="Gallery 1">
+              <div class="overlay"><h4>green and yellow Anarkali</h4><p>Rs.1999</p></div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://assets.myntassets.com/w_412,q_30,dpr_3,fl_progressive,f_webp/assets/images/24275370/2023/8/1/ed311aea-5739-440c-a444-604ab1a8294e1690883182829InddusMaxiDressWithEmbroideredJacket1.jpg" alt="Gallery 2">
+              <div class="overlay"><h4>grey frock</h4><p>Rs.1599</p></div>
+            </div>
+            <div class="gallery-item">
+               <img src="https://images.cbazaar.com/images/Green-Georgette-Tie-N-Dye-Work-Skirt-Set-With-Jacket-IWSUSKA45051002-u.jpg" alt="Gallery 3">
+               <div class="overlay"><h4>blue and yellow lehenga</h4><p>Rs.5999</p></div>
+            </div>
+            <div class="gallery-item">
+               <img src="https://images.cbazaar.com/images/anarkali-suit-for-indian-ethnic-wear-in-green-net-embroidered-sequins--slscc32003903-u.jpg" alt="Gallery 4">
+               <div class="overlay"><h4>Green embroidery kurtha</h4><p>Rs.3999</p></div>
+            </div>
+            <div class="gallery-item">
+               <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ0piBf0jVi3W-6ioIewmd3lKlrT3GFjJsm3T8VFT0Y-kPKgIIUEVH-kPF7pexQriAGV2HeUlnMwb7KPKHZgN9gGdwVF7ElDeh79Y7hAdmo" alt="Gallery 5">
+               <div class="overlay"><h4>Rust orange kurtha</h4><p>Rs.999</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/12/47/cd/1247cd18b09ccd3a655f20b5be04521a.jpg" alt="gallery 6">
+                <div class="overlay"><h4>Pink ruffle lehenga</h4><p>Rs.2999</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://rugvedcollection.com/wp-content/uploads/2023/02/Ready-to-Wear-Gown_1-600x811.jpeg.webp" alt="gallery 7">
+                <div class="overlay"><h4>Red and black kurtha</h4><p>Rs.1899</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRAYmBHSqfcNb8asX1NCt492AXvmLxBn3NMWizjxdcdr2pRZlw5LEcJyF1SDSxIpUx5wKYfdOw_2yLzRO3XWD4LYFc03KhBtkVtMGAecm8" alt="Gallery 8">
+                <div class="overlay"><h4>pink and yellow frock</h4><p>Rs.2599</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/7c/3e/86/7c3e86fc742ab6287388d1281a0e5114.jpg" alt="gallery9">
+                <div class="overlay"><h4>Green embroidery kurtha</h4><p>Rs.2599</p></div>
+            </div>
+            <div class="gallery-item">   
+                <img src="https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/26763450/2024/1/3/e0a2dbe5-4432-48cb-9292-08b461ab741b1704283566805InddusPrintedFitFlaredEthnicDresses1.jpg" alt="gallery 10">
+                 <div class="overlay"><h4>Grey and black frock</h4><p>Rs.1999</p></div>
+            </div>  
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Enquire Now</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="5" placeholder="Tell us about your requirements..." required></textarea>
+                <button type="submit"  class="btn-maroon">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo">Vastra<span>vibe</span></div>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+            <p class="copyright">&copy; 2026 Vastra vibe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
