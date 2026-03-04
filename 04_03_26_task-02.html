@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: white;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 40px;
+  color: #2c2c2c;
+}
+
+.forms-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.entire-form {
+  width: 45%;
+}
+
+.entire-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #000;
+}
+
+.place-in-form {
+  display: flex;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.place-in-form label {
+  width: 120px;
+  font-size: 14px;
+  padding-top: 8px;
+}
+
+.place-in-form input,
+.place-in-form textarea {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.place-in-form textarea {
+  height: 100px;
+  resize: both;     
+}
+
+button {
+  margin-left: 120px;
+  padding: 8px 15px;
+  border: 1px solid #aaa;
+  background-color: #e6e6e6;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #d0d0d0;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Bit Repository contact form</h1>
+
+<div class="forms-2">
+
+  <div class="entire-form">
+    <h2>Contact Us</h2>
+
+    <div class="place-in-form">
+      <label>Name <span style="color: red;">*</span></label>
+      <input type="text">
+    </div>
+
+    <div class="place-in-form">
+      <label>E-Mail <span style="color: red;">*</span></label>
+      <input type="email">
+    </div>
+
+    <div class="place-in-form">
+      <label>Subject</label>
+      <input type="text">
+    </div>
+
+    <div class="place-in-form">
+      <label>Comments <span style="color: red;">*</span></label>
+      <textarea></textarea>
+    </div>
+
+    <button>Send Message</button>
+  </div>
+  <div class="entire-form">
+    <h2>What do you think about this website?</h2>
+
+    <div class="place-in-form">
+      <label>Name <span style="color: red;">*</span></label>
+      <input type="text">
+    </div>
+
+    <div class="place-in-form">
+      <label>Opinion <span style="color: red;">*</span></label>
+      <textarea></textarea>
+    </div>
+
+    <button>Submit</button>
+  </div>
+
+</div>
+
+</body>
+</html>
