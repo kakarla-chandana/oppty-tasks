@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll in Course</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:#ffffff;
+    width:420px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    margin-bottom:5px;
+}
+
+p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.course-box{
+    background:#f4f4f4;
+    border-left:5px solid #f1c40f;
+    padding:15px;
+    border-radius:5px;
+    margin-bottom:25px;
+}
+
+.course-box strong{
+    display:block;
+}
+
+.course-box span{
+    font-size:13px;
+    color:#666;
+}
+
+label{
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+    color:#555;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    margin-bottom:20px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+select{
+    border:2px solid #333;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#f1c40f;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Enroll in Course</h1>
+<p>Join the best instructors and start learning today.</p>
+
+<div class="course-box">
+<strong>Course: Learn UI Design with Figma</strong>
+<span>Instructor: Daniele Buffa</span>
+</div>
+
+<form>
+
+<label>FULL NAME</label>
+<input type="text" placeholder="Enter your full name">
+
+<label>EMAIL ADDRESS</label>
+<input type="email" placeholder="name@example.com">
+
+<label>SELECT EXPERIENCE LEVEL</label>
+<select>
+<option>Beginner (0 to 100)</option>
+<option>Moderate(100 to 300)</option>
+<option>Advanced(300 to 600)</option>
+<option>Pro(600 to 1000)</option>
+</select>
+
+<button>Proceed to Payment &#8594;</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
